@@ -1,0 +1,20 @@
+<div style="background-color: #E9F3D7; padding: 3px;">
+
+<span style="font-size: larger; font-weight: bold;">
+  <%= link_to 'the blog!', blog_entries_path %>
+</span> 
+-- our fascinating blog
+<br/>
+
+<span style="width:100px;"> 
+<%= image_tag '/images/view.JPG', :style => "flow: left;" %>
+</span>
+<span style="width:66%;">
+<ul>
+<% BlogEntry.latest.each do |b| %>
+<li> <%= link_to b.title, blog_entry_path(b) %>
+<% end %>
+</ul>
+</span>
+
+</div>

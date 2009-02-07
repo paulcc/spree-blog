@@ -1,0 +1,21 @@
+<%= error_messages_for :comment %>
+<br />
+
+<p>
+  <%= form.text_area :body, :cols => 60, :rows => 10 %>
+</p>
+<br/>
+<p>
+  <%= form.text_field :name, :size => 30 %>
+</p>
+<br/>
+<p>
+  <%= form.text_field :uri, :size => 50 %>
+  <br/>
+  Visit the <%= link_to "supplied link", form.object.uri %>
+</p>
+<br/>
+<p>
+  <%= form.submit button_name %>
+</p>
+

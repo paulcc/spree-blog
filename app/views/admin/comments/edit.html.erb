@@ -1,0 +1,17 @@
+<h1>Editing blog comment from <%= @comment.user.email %></h1>
+
+<h2>Original version</h2>
+
+<p>
+<%= @comment.body %>
+</p>
+<br/>
+
+<h2>Edited version</h2>
+
+<% form_for([:admin, @comment.blog_entry, @comment]) do |f| %>
+  <%= render :partial => f,
+             :locals  => { :button_name => "Update" } %>
+<% end %>
+
+<%= link_to 'Back', admin_blog_entry_comments_path %>

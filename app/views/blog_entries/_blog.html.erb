@@ -1,0 +1,19 @@
+<style type="text/css">
+.date {
+  border-bottom:1px dashed;
+  color:#98C560;
+  font-weight:bold;
+  padding:0 0 3px;
+}
+</style>
+<div class="date">
+  <%= b.created_at.strftime("%A, %d %B %Y") %>, posted by <%= b.author %> 
+</div>
+<h2>
+  <%= link_to "<strong>#{b.title}</strong>", (blog_entry_path b) %>
+</h2>
+
+<div style="background-color: #ffffff; margin: 10px; padding: 3px;">
+  <%= expand_sku(b.body) %>
+</div>
+<br/>

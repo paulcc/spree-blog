@@ -1,0 +1,49 @@
+<h1>Comments for blog entry: <%= @blog.title %></h1>
+
+<br/>
+<h2>Current text</h2>
+
+<p>
+  <%= @blog.body %>
+</p>
+
+<br/>
+<h2>Unapproved comments</h2>
+
+<table cellspacing=6>
+  <tr>
+    <th>Date</th>
+    <th>User/Name</th>
+    <th>URI</th>
+    <th>Body</th>
+  </tr>
+
+<% for comment in @blog.comments.not_approved %>
+  <tr>
+    <td> 
+      <%= comment.created_at.strftime("%d-%m-%y (%H:%M)") %>
+    </td>
+    <td> 
+      <%= comment.user.email %>
+      <br/>
+      alias <%= h comment.name %>
+    </td>
+    <td>
+      <%= h comment.uri %>
+    </td>
+    <td style="border: 1px dashed green" width="60%">
+      <br/>
+      <%= h comment.body %>
+    </td>
+    <td>
+        <%= link_to t('Approve'), {:action => 'approve', :id => comment} %> |
+        <%= link_to t('Edit'), [:edit, :admin, @blog, comment] %> |
+        <%= link_to t('Destroy'), [:admin, @blog, comment], :method => :delete, :confirm => t('Are you sure you want to delete this comment?') %>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= link_to "Back to Blog Entries", :controller => "admin/blog_entries" %>
+

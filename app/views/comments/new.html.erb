@@ -1,0 +1,47 @@
+<h1>Add a comment on blog entry: </h1>
+
+<%= render :partial => 'blog_entries/blog', :locals => {:b => @blog} %>
+
+<br/>
+
+<%= error_messages_for :comment %>
+<% form_for :comment, :url => {:action => :create} do |f| %>
+<%= f.hidden_field :blog_entry_id, :value => @blog.id %>
+
+<p>
+  Please add your comment below, as plain text (i.e., no Html accepted)
+</p>
+<p>
+  <%= f.text_area :body, :cols => 60, :rows => 10 %>
+</p>
+<p>
+  We will link to your web page if you supply a URI
+</p>
+<p>
+  <%= f.text_field :uri, :size => 50 %>
+</p>
+<p>
+  Give a name to appear as the text of your link
+</p>
+<p>
+  <%= f.text_field :name, :size => 30 %>
+</p>
+<p>
+  <%= f.submit "Submit comment" %>
+</p>
+<% end %>
+
+<br/>
+<%= link_to 'Back to the blog', :back %>
+
+<br/>
+<h2>The fine print</h2>
+<ul>
+    <li>All submitted comments are subject to the licence terms set out in our
+        <%= link_to "terms and conditions", url_for(:controller => 'info', :action => 'terms') %>.
+    </li><li>Your comments will be posted within one to two business days.
+    </li><li>Submissions that do not follow our
+        <%= link_to "submission guidelines", url_for(:controller => 'info', :action => 'review_guidelines') %> will not be published.
+    </li>
+</ul>
+

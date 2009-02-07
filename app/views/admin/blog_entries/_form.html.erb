@@ -1,0 +1,22 @@
+<%= error_messages_for :blog_entry %>
+<br />
+<p>
+  <%= form.label :author %><br />
+  <%= form.text_field :author %>
+</p>
+<p>
+  <%= form.label :title %><br />
+  <%= form.text_field :title %>
+</p>
+<p>
+  <%= form.label :body %><br />
+  <%= form.text_area :body, :cols => 60, :rows => 10 %>
+</p>
+<br/>
+<p>
+  Todo: tie to products and/or taxons
+</p>
+<p>
+  <%= form.submit button_name %>
+</p>
+
