@@ -8,6 +8,8 @@ Please see TODO file for planned work.
 Usage
 -----
 
+grab with: `script/extension install git://github.com/paulcc/spree-blog.git`
+ 
 Administrator writes a blog entry in Html via admin interface
 
 S/he can embed product details by including skus in \*...\*, eg "\*00120\*"

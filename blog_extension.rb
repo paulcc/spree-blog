@@ -4,7 +4,7 @@
 class BlogExtension < Spree::Extension
   version "1.0"
   description "Simple blog facility"
-  url "http://yourwebsite.com/blog"
+  url "git://github.com/paulcc/spree-blog.git"
 
   define_routes do |map|
     map.resources :blog_entries, :as => 'the-blog', :has_many => :comments
