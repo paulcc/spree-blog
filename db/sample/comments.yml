@@ -1,0 +1,42 @@
+comment_1:
+  user: frank
+  blog_entry: blog_1
+  name: frank one
+  uri: "http://google.com"
+  body: I completely agree
+  approved: true
+comment_2:
+  user: frank
+  blog_entry: blog_1
+  name: frank two no uri
+  uri: 
+  body: I absolutely disagree
+  approved: true
+comment_3:
+  user: frank
+  blog_entry: blog_1
+  name: frank three
+  uri: "http://google.com"
+  body: I completely agree again
+  approved: false
+comment_4:
+  user: frank
+  blog_entry: blog_1
+  name: frank one
+  uri: "http://google.com"
+  body: I am not sure now
+  approved: true
+comment_5:
+  user: frank
+  blog_entry: blog_2
+  name: frank on two
+  uri: "http://google.com"
+  body: Right on! I like the gear.
+  approved: true
+comment_6:
+  user: frank
+  blog_entry: blog_3
+  name: frank on three
+  uri: "http://google.com"
+  body: I liked these so much I bought the company
+  approved: true
