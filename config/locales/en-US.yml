@@ -1,8 +1,16 @@
 en-US:
+  approve: Approve
   blog_management: "Blog management" 
   blog_management_description: "Manage the blog and comments"
   review_comments: "Review comments"
   are_you_sure_blog_comment: "Are you sure you want to delete this blog comment?"
   are_you_sure_blog_entry: "Are you sure you want to delete this blog entry?"
   back_to_blog_entries: "Back to blog entries" 
+  back_to_the_blog: "Back to the blog"
+  terms_and_conditions: "Terms and Conditions"
+  submission_guidelines: "Submission Guidelines"
+  read_the_comments: "Read the comments"
+  submit_a_comment: "Submit a comment"
+  read_the_blog: "Read the blog"
+
 

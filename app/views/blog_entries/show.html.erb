@@ -1,7 +1,7 @@
 <%= render :partial => 'blog', :locals => {:b => @blog} %>
 
 <br/>
-<%= link_to 'Submit a comment', new_blog_entry_comment_path(@blog) %>
+<%= link_to t('submit_a_comment'), new_blog_entry_comment_path(@blog) %>
 <br/>
 
 <a name="comments"> </a>
@@ -26,5 +26,5 @@
 </ul>
 
 <br/>
-<%= link_to 'Submit a comment', new_blog_entry_comment_path(@blog) unless @blog.comments.approved.length < 10 %>
+<%= link_to t('submit_a_comment'), new_blog_entry_comment_path(@blog) unless @blog.comments.approved.length < 10 %>
 <br/>
