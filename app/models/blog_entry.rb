@@ -7,7 +7,7 @@ class BlogEntry < ActiveRecord::Base
   validates_presence_of :body
 
   def codes
-    self.body.scan(/\*(\w+)\*/).flatten.uniq
+    self.body.scan(/\*([-\w]+)\*/).flatten.uniq
   end
 
   def validate

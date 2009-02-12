@@ -22,7 +22,7 @@ class BlogExtension < Spree::Extension
       before_filter :add_blog_links, :only => :index
     
       def add_blog_links
-        @extension_links << {:link => admin_blog_entries_path, :link_text => t('Blog management'), :description => "Manage the blog."}
+        @extension_links << {:link => admin_blog_entries_path, :link_text => t('blog_management'), :description => t('blog_management_description')}
       end
     end
     

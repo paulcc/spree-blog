@@ -1,0 +1,8 @@
+en-GB:
+  blog_management: "Blog management" 
+  blog_management_description: "Manage the blog and comments"
+  review_comments: "Review comments"
+  are_you_sure_blog_comment: "Are you sure you want to delete this blog comment?"
+  are_you_sure_blog_entry: "Are you sure you want to delete this blog entry?"
+  back_to_blog_entries: "Back to blog entries" 
+

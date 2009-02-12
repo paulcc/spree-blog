@@ -32,14 +32,12 @@
       <%= truncate(blog_entry.body, length = 100, truncate_string = "...") %>
     </td>
     <td>
-        <%= link_to (t('Review comments') + " (#{blog_entry.comments.not_approved.length})"),
+        <%= link_to (t('review_comments') + " (#{blog_entry.comments.not_approved.length})"),
                     [:admin, blog_entry, :comments] %> |
-        <%= link_to t('Edit'), [:edit, :admin, blog_entry] %> |
-        <%= link_to t('Destroy'), [:admin, blog_entry], :method => :delete, :confirm => t('Are you sure you want to delete this blog_entry?') %>
+        <%= link_to t('edit'), [:edit, :admin, blog_entry] %> |
+        <%= link_to t('destroy'), [:admin, blog_entry], :method => :delete, :confirm => t('are_you_sure_blog_entry') %>
     </td>
   </tr>
 <% end %>
 </table>
 
-<br />
-<%= link_to "Back to Configurations", :controller => "admin/configurations" %>
