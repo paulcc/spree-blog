@@ -6,15 +6,15 @@ module BlogEntriesHelper
   def expand_sku(text)
     matches = 0
     pics = ""
-    text.gsub!(/\*(\w+)\*/) do |s|
+    text.gsub!(/\*([-\w]+)\*/) do |s|
       v = Variant.find_by_sku($1)
       if v.nil?
         "(deleted product #{$1})"
       else
         matches += 1
         p = v.product
-        pics << link_to((mini_image p), p.permalink, :style => "padding:6px", :title => p.name)
-        link_to(p.name, p.permalink)
+        pics << link_to((mini_image p), product_path(p), :style => "padding:6px", :title => p.name)
+        link_to(p.name, product_path(p))
       end
     end
     text + "<br/>" + pics

@@ -1,12 +1,13 @@
 <style type="text/css">
-.date {
+/* want to move this out sometime */
+.blog_header {
   border-bottom:1px dashed;
   color:#98C560;
   font-weight:bold;
   padding:0 0 3px;
 }
 </style>
-<div class="date">
+<div class="blog_header">
   <%= b.created_at.strftime("%A, %d %B %Y") %>, posted by <%= b.author %> 
 </div>
 <h2>
