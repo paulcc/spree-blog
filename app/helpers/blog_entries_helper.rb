@@ -1,23 +1,24 @@
 module BlogEntriesHelper
 
   # insert links for *nnnnn* codes
-  # distributes small thumbnails to left and right
-  # attempts to set min height for the BB
-  def expand_sku(text)
+  # puts small thumbnails beneath the text (or do by paragraph?)
+  # should this code be in the model? maybe not, since it's a view thing...
+  def expand_sku(entry)
     matches = 0
     pics = ""
-    text.gsub!(/\*([-\w]+)\*/) do |s|
-      v = Variant.find_by_sku($1)
+    text = entry.body
+    entry.codes.each do |c|
+      v = Variant.find_by_sku(c)
       if v.nil?
-        "(deleted product #{$1})"
+        "(invalid product #{c})"
       else
         matches += 1
         p = v.product
         pics << link_to((mini_image p), product_path(p), :style => "padding:6px", :title => p.name)
-        link_to(p.name, product_path(p))
+        text.gsub! /\*#{c}\*/, link_to(p.name, product_path(p))
       end
     end
-    text + "<br/>" + pics
+    text + "<br/><p>" + pics + "</p>"
   end
 
 
