@@ -4,12 +4,18 @@
 <%= link_to 'Submit a comment', new_blog_entry_comment_path(@blog) %>
 <br/>
 
-<a name="comments"/>
+<a name="comments"> </a>
 <ul style="list-style: none;">
-<% @blog.comments.approved.lifo_order.each do |c| %>
+<% @blog.comments.approved.date_order.each do |c| %>
   <li>
     <hr>
-    <%= h c.user.email %> on <%= c.created_at.strftime("%A, %d %B %Y") %>
+    <%= time_ago_in_words(c.created_at) %>
+    ago, from
+    <% if c.uri.blank? %>
+      <%= h c.name %>
+    <% else %>
+      <%= link_to (h c.name), c.uri %> 
+    <% end %>
     <br/>
     <quote style="margin:10px; padding:3px;">
       <%= h c.body %>
@@ -20,5 +26,5 @@
 </ul>
 
 <br/>
-<%= link_to 'Submit a comment', new_blog_entry_comment_path(@blog) unless @blog.comments.approved.empty? %>
+<%= link_to 'Submit a comment', new_blog_entry_comment_path(@blog) unless @blog.comments.approved.length < 10 %>
 <br/>
