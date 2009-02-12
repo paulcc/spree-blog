@@ -10,7 +10,7 @@ Usage
 
 Administrator writes a blog entry in Html via admin interface
 
-S/he can embed product details by including skus in **...**, eg "**00120**"
+S/he can embed product details by including skus in \*...\*, eg "\*00120\*"
 These expanded inline into link to product and a corresponding small
 image is added after the blog text. 
 
