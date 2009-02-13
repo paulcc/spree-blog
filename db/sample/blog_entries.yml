@@ -1,25 +1,20 @@
 blog_1:
-  id: 1
   author: bill 
   title: a first blog entry
   body: some short text 
 blog_2:
-  id: 2
   author: joe 
   title: a second blog entry
-  body: some long text with code *RUB-000001* as sku
+  body: some long text with code *RUB-00001* as sku
 blog_3:
-  id: 3
   author: bill
   title: a third blog entry
-  body: some long text with code *RUB-000001* as sku
+  body: some long text with code *RUB-00001* as sku
 blog_4:
-  id: 4
   author: joe 
   title: a fourth blog entry with a longer title
-  body: several references to *RUB-000001* and to *APC-00001* and to *ROR-00006* and why not to *ROR-00009*
+  body: several references to *RUB-00001* and to *APC-00001* and to *ROR-00006* and why not to *ROR-00009*
 blog_5:
-  id: 5
   author: joe 
   title: a fifth blog entry 
-  body: several references to *RUB-000001* and to *APC-00001* and to *ROR-00006* and why not to *ROR-00009*
+  body: several references to *RUB-00001* and to *APC-00001* and to *ROR-00006* and why not to *ROR-00009*
