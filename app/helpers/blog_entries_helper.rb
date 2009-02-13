@@ -5,7 +5,7 @@ module BlogEntriesHelper
   # should this code be in the model? maybe not, since it's a view thing...
   def expand_sku(entry)
     matches = 0
-    pics = ""
+    pics = []
     text = entry.body
     entry.codes.each do |c|
       v = Variant.find_by_sku(c)
@@ -18,7 +18,7 @@ module BlogEntriesHelper
         text.gsub! /\*#{c}\*/, link_to(p.name, product_path(p))
       end
     end
-    text + "<br/><p>" + pics + "</p>"
+    text + "<br/><p>" + pics.uniq.join + "</p>"
   end
 
 
