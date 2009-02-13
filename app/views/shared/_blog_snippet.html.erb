@@ -6,15 +6,11 @@
 -- our fascinating blog
 <br/>
 
-<span style="width:100px;"> 
 <%= image_tag '/images/blog.jpg', :style => "flow: left;" %>
-</span>
-<span style="width:66%;">
 <ul>
 <% BlogEntry.latest.each do |b| %>
 <li> <%= link_to b.title, blog_entry_path(b) %>
 <% end %>
 </ul>
-</span>
 
 </div>
