@@ -7,11 +7,11 @@ class BlogEntry < ActiveRecord::Base
   validates_presence_of :body
 
   def codes
-    self.body.scan(/\*([^*]+)\*/).flatten.uniq
+    self.body.scan(/\*([^:*]+):?([^*]*)\*/).uniq
   end
 
   def validate
-    codes.each do |k|
+    codes.each do |k,n|
       v = Variant.find_by_sku(k)
       errors.add(:body, " contains unknown product code #{k}") if v.nil?
     end
