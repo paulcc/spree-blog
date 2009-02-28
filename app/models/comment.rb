@@ -8,8 +8,8 @@ class Comment < ActiveRecord::Base
 
   # before_save :expand_uri
 
-  named_scope :approved,     lambda {|*args| {:conditions => "approved == 't'"}}
-  named_scope :not_approved, lambda {|*args| {:conditions => "approved != 't'"}}
+  named_scope :approved,     lambda {|*args| {:conditions => "approved"}}
+  named_scope :not_approved, lambda {|*args| {:conditions => "not approved"}}
   named_scope :lifo_order,   lambda {|*args| {:order => "created_at DESC"}}
   named_scope :date_order,   lambda {|*args| {:order => "created_at ASC"}}
 
