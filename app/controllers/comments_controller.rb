@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
   helper BlogEntriesHelper
 
   # no comments without login first
-  before_filter :login_required, :only => [:new,:create] 
+  before_filter :require_user_account, :only => [:new,:create] 
 
   def new 
     @blog = BlogEntry.find(params[:blog_entry_id])
@@ -27,6 +27,13 @@ class CommentsController < ApplicationController
       @blog = BlogEntry.find(params[:comment][:blog_entry_id])
       render :action => "new"
     end
+  end
+
+  private
+  def require_user_account
+    return if logged_in?
+    store_location
+    redirect_to signup_path
   end
 
 end

@@ -26,5 +26,5 @@
 </ul>
 
 <br/>
-<%= link_to t('submit_a_comment'), new_blog_entry_comment_path(@blog) unless @blog.comments.approved.length < 10 %>
+<%= link_to t('submit_a_comment'), new_blog_entry_comment_path(@blog) if @blog.comments.approved.length > 3 %>
 <br/>

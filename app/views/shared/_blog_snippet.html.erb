@@ -9,7 +9,7 @@
 <%= image_tag '/images/blog.jpg', :style => "flow: left;" %>
 <ul>
 <% BlogEntry.latest.each do |b| %>
-<li> <%= link_to b.title, blog_entry_path(b) %>
+  <li> <%= link_to b.title, blog_entry_path(b) %> </li>
 <% end %>
 </ul>
 
