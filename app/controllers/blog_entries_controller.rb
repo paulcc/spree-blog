@@ -1,4 +1,4 @@
-class BlogEntriesController < ApplicationController
+class BlogEntriesController < Spree::BaseController
   helper Spree::BaseHelper
 
   resource_controller

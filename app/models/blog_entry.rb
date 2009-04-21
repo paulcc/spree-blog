@@ -17,8 +17,8 @@ class BlogEntry < ActiveRecord::Base
     end
   end
 
-  def self.latest
-      find(:all, :order => "created_at DESC", :limit => 3)
+  def self.latest(limit = 3)
+      find(:all, :order => "created_at DESC", :limit => limit)
   end
 
   before_save :set_products

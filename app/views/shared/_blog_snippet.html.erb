@@ -6,7 +6,7 @@
 -- our fascinating blog
 <br/>
 
-<%= image_tag '/images/blog.jpg', :style => "flow: left;" %>
+<%= image_tag '/images/blog.jpg', :style => "float: left; height: 200px; width: 100px;", :alt => "blog decoration image" %>
 <ul>
 <% BlogEntry.latest.each do |b| %>
   <li> <%= link_to b.title, blog_entry_path(b) %> </li>

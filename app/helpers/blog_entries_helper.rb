@@ -22,14 +22,16 @@ module BlogEntriesHelper
         end
       end
     end
-    mini_pics = products.each do |p| 
-                  link_to((mini_image p), product_path(p), :style => "padding:6px", :title => p.name)
-                end
+    ## mini_pics = products.each do |p| 
+    ##               link_to((mini_image p), product_path(p), :style => "padding:6px", :title => p.name)
+    ##             end
     ## "<image src=text + "<br/><p>" + mini_pics.uniq.join + "</p>"
-    
-    featured = products[rand(products.length)]
-    text.gsub! /^\s*<p>/, ""
-    "<p>" + (link_to (product_image featured), (product_path featured), :style => "float:left; padding:6px", :title => featured.name) + text
+   
+    unless products.empty?  
+      featured = products[rand(products.length)]
+      text.gsub! /^\s*<p>/, ""
+      "<p>" + (link_to (product_image featured), (product_path featured), :style => "float:left; padding:6px", :title => featured.name) + text
+    end
   end
 
 
