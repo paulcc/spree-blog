@@ -1,5 +1,5 @@
-class CommentsController < ApplicationController
-  helper Spree::BaseHelper
+class CommentsController < Spree::BaseController
+  # helper Spree::BaseHelper
   helper BlogEntriesHelper
 
   # no comments without login first
@@ -31,7 +31,7 @@ class CommentsController < ApplicationController
 
   private
   def require_user_account
-    return if logged_in?
+    return current_user
     store_location
     redirect_to signup_path
   end

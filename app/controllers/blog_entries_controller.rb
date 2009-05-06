@@ -1,5 +1,5 @@
 class BlogEntriesController < Spree::BaseController
-  helper Spree::BaseHelper
+  # helper Spree::BaseHelper
 
   resource_controller
   actions :show, :index
